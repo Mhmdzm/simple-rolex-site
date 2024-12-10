@@ -1,0 +1,155 @@
+*{
+    padding: 0;
+    margin:0;
+    font-family: sans-serif;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(black ,rgb(1, 41, 1));
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 93, 0);
+    position: absolute;
+    clip-path: circle(40% at right 70%);
+    z-index: -1;
+}
+.container{
+    height: 80%;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: scroll;
+    
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+nav .logo{
+    color: white;
+    text-decoration: none;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+nav ul li {
+    display: inline-block;
+    margin: 0 6px;
+    
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+nav ul li a:hover{
+    color:rgb(0, 93, 0) ;
+    
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+
+}
+.content .text{
+    color: white;
+    width: 40%;
+}
+.content .text h2{
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+}
+.content .text p{
+    font-size: 18px;
+    line-height: 25px;
+    margin: 10px 0;
+    letter-spacing: 1px;
+}
+.content .pic{
+    width: auto;
+    
+}
+.content .pic img{
+    width: 250px;
+}
+@media (min-width: 950px) and (max-width: 1150px){
+    .content .pic img{
+        width: 170px;
+    }
+}
+@media (max-width: 949px){
+    .content, nav {
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    .content .text ,.content .pic{
+        width: 80%;
+    }
+    .content .pic img{
+        width: 90px;
+    
+    }
+    body::after{
+        clip-path:circle(40% at bottom);
+    }
+}
+#smallc{
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    border-radius: 15px;
+    animation-name: circle;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+@keyframes circle{
+    0%{
+        background-color: green;
+        translate: -10px 310px;
+    }
+    25%{
+        translate: 1100px 310px;
+
+        background-color: black;
+    }
+    50%{
+        translate: -10px 310px;
+        background-color: yellowgreen;
+    }
+    75%{
+        translate: -10px -300px;
+        background-color: rgb(96, 125, 38);
+    }
+    100%{
+        translate: -10px 310px;
+        background-color: green;
+    }
+}
+#smallc:hover{
+    cursor: pointer;
+    animation-play-state: paused;
+}
